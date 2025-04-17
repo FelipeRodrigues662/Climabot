@@ -46,9 +46,6 @@ export default function Chat() {
 
   return (
     <div style={styles.wrapper}>
-      <div style={styles.header}>
-        <h2>Chatbot do Clima</h2>
-      </div>
       <div style={styles.chatBox}>
         <div style={styles.messages}>
           {messages.map((msg, idx) => (
@@ -81,15 +78,6 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#f4f4f4",
-  },
-  header: {
-    width: "100%",
-    padding: "1rem",
-    backgroundColor: "#007bff",
-    color: "#fff",
-    textAlign: "center",
-    borderTopLeftRadius: "10px",
-    borderTopRightRadius: "10px",
   },
   chatBox: {
     width: "100%",

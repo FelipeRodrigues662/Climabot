@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const sessions = require('../../sessions');
-const stateMachine = require('../stateMachine');
+const sessions = require('../services/sessions.js');
+const stateMachine = require('../services/stateMachine.js');
 
 router.post('/', async (req, res) => {
   const { sessionId, message } = req.body;

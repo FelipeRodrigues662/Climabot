@@ -1,6 +1,8 @@
+const fetch = require('node-fetch');
+
 const states = {
   welcome: async () => ({
-    message: "👋 Bem-vindo ao Chatbot do Clima!\nO que você deseja fazer?\n[1] Consultar clima\n[2] Sair",
+    message: "👋 Bem-vindo ao Chatbot do Clima!\nO que você deseja fazer?\n\n[1] Consultar clima\n[2] Sair",
     nextState: "menu"
   }),
   menu: async (input) => {
@@ -10,7 +12,6 @@ const states = {
   },
   weather: async (input) => {
     try {
-      const fetch = require('node-fetch');
       const nominatimRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(input)}`);
       const geo = await nominatimRes.json();
       if (!geo.length) throw new Error("Cidade não encontrada.");
